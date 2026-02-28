@@ -1,0 +1,19 @@
+{
+  "name": "dfernandez79-skills",
+  "owner": {
+    "name": "Diego Fernandez"
+  },
+  "metadata": {
+    "description": "Skills for AI agents — modular packages that extend AI agent capabilities with specialized knowledge, workflows, and tools",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "dfernandez79-skills",
+      "description": "Collection of skills including a latest tech news fetcher",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/latest-tech-news"]
+    }
+  ]
+}

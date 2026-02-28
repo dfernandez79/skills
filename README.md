@@ -12,8 +12,9 @@ This repository follows the [Agent Skills standard](https://github.com/anthropic
 
 ```
 skills/
-├── greeting-assistant/    # Sample skill demonstrating the basic structure
-│   └── SKILL.md          # Skill instructions and metadata
+├── latest-tech-news/      # Fetches and summarizes the latest tech news
+│   ├── SKILL.md           # Skill instructions and metadata
+│   └── scripts/           # News fetching scripts
 └── [future-skills]/       # Add more skills here
 ```
 
@@ -30,14 +31,6 @@ Each skill consists of:
   - `scripts/`: Executable code for deterministic tasks
   - `references/`: Documentation loaded as needed
   - `assets/`: Files used in output (templates, images, etc.)
-
-## Sample Skill
-
-The `greeting-assistant` skill demonstrates a simple, complete skill implementation. It shows:
-- Proper YAML frontmatter structure
-- Clear capability descriptions
-- Step-by-step usage instructions
-- Examples and best practices
 
 ## Creating New Skills
 
