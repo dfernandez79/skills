@@ -9,22 +9,21 @@ Fetch and summarize the latest technology news from curated sources, filtered by
 
 ## Sources
 
-| Source | Coverage |
-|---|---|
-| [Hacker News](https://news.ycombinator.com/) | Startups, programming, tech industry |
+| Source                                              | Coverage                                      |
+| --------------------------------------------------- | --------------------------------------------- |
+| [Hacker News](https://news.ycombinator.com/)        | Startups, programming, tech industry          |
 | [Simon Willison's Blog](https://simonwillison.net/) | AI/LLMs, Python, web development, open source |
-| [MacRumors](https://www.macrumors.com/) | Apple hardware, software, and ecosystem |
-| [Lobsters](https://lobste.rs/) | Programming, systems, devops, security |
+| [MacRumors](https://www.macrumors.com/)             | Apple hardware, software, and ecosystem       |
+| [Lobsters](https://lobste.rs/)                      | Programming, systems, devops, security        |
 
 ## How to Fetch News
 
-Run the bundled Python script to retrieve news filtered by topic. The script uses RSS/Atom feeds and the Hacker News Algolia API to fetch results efficiently. It requires only Python 3 standard library — no external dependencies.
+Run the bundled Python script to retrieve the latest news. It requires only Python 3 standard library — no external dependencies.
 
 ```bash
-python3 <skill_path>/scripts/fetch_news.py "<topic>" [max_results_per_source]
+python3 <skill_path>/scripts/fetch_news.py [max_results_per_source]
 ```
 
-- `<topic>` (required): The search query, e.g. "AI agents", "Rust", "Apple Vision Pro"
 - `max_results_per_source` (optional): Number of results per source (default: 8)
 
 Replace `<skill_path>` with the actual path to this skill's directory.
@@ -33,14 +32,16 @@ Replace `<skill_path>` with the actual path to this skill's directory.
 
 ```bash
 # Broad topic
-python3 <skill_path>/scripts/fetch_news.py "AI" 5
-
-# Specific topic
-python3 <skill_path>/scripts/fetch_news.py "Rust programming" 5
-
-# Product news
-python3 <skill_path>/scripts/fetch_news.py "Apple Vision Pro"
+python3 <skill_path>/scripts/fetch_news.py 5
 ```
+
+## How to Filter the Results
+
+The script will return the latest news items from each source. Returning the title and URL for each item. You can filter these results based on relevance to the user's query. For example, if the user is interested in "AI agents," look for items that mention AI, machine learning, or related terms in the title or summary.
+
+Hacker News and Lobsters only report the title and URL, so you may need to infer relevance from the title and if that isn't enough from the actual content of the linked article.
+
+Simon Willison's blog and MacRumors often include a summary or description that can help determine relevance.
 
 ## How to Present Results
 
@@ -58,9 +59,3 @@ After running the script, present the results following these guidelines:
 4. **End with a brief synthesis** if there are cross-cutting themes (e.g., "A common thread across these stories is the rapid adoption of coding agents in professional development workflows").
 
 5. If a source returned no results, briefly note it rather than omitting it silently.
-
-## Notes
-
-- Hacker News results come from the Algolia search API, so they support full-text search across all stories. Results are sorted by date (most recent first).
-- Simon Willison's blog, MacRumors, and Lobsters results are filtered locally from their RSS/Atom feeds, matching all query words in titles and descriptions. This means only items currently in the feed (typically the most recent ~30 items) are searchable.
-- If a topic is very niche and returns few results, suggest the user try broader or alternative terms.

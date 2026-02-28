@@ -14,3 +14,6 @@ Thumbs.db
 *.tmp
 *.temp
 .cache/
+
+# Build output
+dist/
