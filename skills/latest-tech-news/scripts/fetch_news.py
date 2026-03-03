@@ -13,13 +13,14 @@ Examples:
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from sources import AtomSource, HackerNewsSource, RSSSource
+from sources import AtomSource, HackerNewsSource, JSONFeedSource, RSSSource
 
 SOURCES = [
     HackerNewsSource(),
     AtomSource("Simon Willison's Blog", "https://simonwillison.net/atom/everything/"),
     RSSSource("MacRumors", "https://feeds.macrumors.com/MacRumors-All"),
     RSSSource("Lobsters", "https://lobste.rs/rss", include_snippet=False),
+    JSONFeedSource("Daring Fireball", "https://daringfireball.net/feeds/json"),
 ]
 
 

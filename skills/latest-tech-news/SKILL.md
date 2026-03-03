@@ -1,6 +1,6 @@
 ---
 name: latest-tech-news
-description: Fetches and summarizes the latest tech news from Hacker News, Simon Willison's blog, MacRumors, and Lobsters. Use when users ask about recent tech news, trends, or want updates on specific topics like AI, programming languages, Apple products, open source, etc.
+description: Fetches and summarizes the latest tech news from Hacker News, Simon Willison's blog, MacRumors, Lobsters, and Daring Fireball. Use when users ask about recent tech news, trends, or want updates on specific topics like AI, programming languages, Apple products, open source, etc.
 ---
 
 # Latest Tech News
@@ -15,6 +15,7 @@ Fetch and summarize the latest technology news from curated sources, filtered by
 | [Simon Willison's Blog](https://simonwillison.net/) | AI/LLMs, Python, web development, open source |
 | [MacRumors](https://www.macrumors.com/)             | Apple hardware, software, and ecosystem       |
 | [Lobsters](https://lobste.rs/)                      | Programming, systems, devops, security        |
+| [Daring Fireball](https://daringfireball.net/)      | Apple news, tech commentary, product reviews  |
 
 ## How to Fetch News
 
