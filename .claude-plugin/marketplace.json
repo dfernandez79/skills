@@ -10,10 +10,14 @@
   "plugins": [
     {
       "name": "dfernandez79-skills",
-      "description": "Collection of skills including a latest tech news fetcher",
+      "description": "Collection of skills including a latest tech news fetcher and UI prototype generator",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/latest-tech-news"]
+      "skills": [
+        "./skills/latest-tech-news",
+        "./skills/ui-prototype",
+        "./skills/enrich-meeting-notes"
+      ]
     }
   ]
 }
